@@ -1,3 +1,3 @@
 [submodule "src/color"]
 	path = src/color
-	url = git@github.com:FamousInternal/color.git
+	url = https://github.com/FamousInternal/color.git
