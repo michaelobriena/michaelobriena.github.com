@@ -9,7 +9,8 @@ var mainContext = Engine.createContext();
 // your app here
 var logo = new ImageSurface({
     size: [200, 200],
-    content: 'http://code.famo.us/assets/famous_logo.svg',
+    // content: 'http://code.famo.us/assets/famous_logo.png', // This works
+    content: 'http://code.famo.us/assets/famous_logo.svg', // This does not
     properties: {
         backfaceVisibility: 'visible'
     }
