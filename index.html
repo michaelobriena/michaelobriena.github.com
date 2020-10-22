@@ -1,30 +1,176 @@
 <!DOCTYPE HTML>
 <html>
     <head>
-        <title>famo.us App</title>
+        <title>Mike O'Brien</title>
         <meta name="viewport" content="width=device-width, maximum-scale=1, user-scalable=no" />
         <meta name="mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="black" />
 
-        <!-- shims for backwards compatibility -->
-        <script type="text/javascript" src="https://code.famo.us/lib/functionPrototypeBind.js"></script>
-        <script type="text/javascript" src="https://code.famo.us/lib/classList.js"></script>
-        <script type="text/javascript" src="https://code.famo.us/lib/requestAnimationFrame.js"></script>
-
-        <!-- module loader -->
-        <script type="text/javascript" src="https://code.famo.us/lib/require.js"></script>
-
-        <!-- famous -->
-        <link rel="stylesheet" type="text/css" href="https://code.famo.us/famous/0.2/famous.css" />
-        <script type="text/javascript" src="https://code.famo.us/famous/0.2/famous.min.js"></script>
-
         <!-- app code -->
-        <link rel="stylesheet" type="text/css" href="css/app.css" />
-        <script type="text/javascript">
-            require.config({baseUrl: 'src/'});
-            require(['main']);
-        </script>
+        <link rel="stylesheet" type="text/css" href="src/css/app.css" />
     </head>
-    <body></body>
+    <body>
+      <!-- <div class="mainWrapper">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur facere amet exercitationem, laboriosam cum ratione pariatur assumenda, in molestiae velit sapiente doloremque voluptatibus reiciendis dolorum non. Temporibus illum veniam laudantium?
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur facere amet exercitationem, laboriosam cum ratione pariatur assumenda, in molestiae velit sapiente doloremque voluptatibus reiciendis dolorum non. Temporibus illum veniam laudantium?
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur facere amet exercitationem, laboriosam cum ratione pariatur assumenda, in molestiae velit sapiente doloremque voluptatibus reiciendis dolorum non. Temporibus illum veniam laudantium?
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur facere amet exercitationem, laboriosam cum ratione pariatur assumenda, in molestiae velit sapiente doloremque voluptatibus reiciendis dolorum non. Temporibus illum veniam laudantium?
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur facere amet exercitationem, laboriosam cum ratione pariatur assumenda, in molestiae velit sapiente doloremque voluptatibus reiciendis dolorum non. Temporibus illum veniam laudantium?
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur facere amet exercitationem, laboriosam cum ratione pariatur assumenda, in molestiae velit sapiente doloremque voluptatibus reiciendis dolorum non. Temporibus illum veniam laudantium?
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur facere amet exercitationem, laboriosam cum ratione pariatur assumenda, in molestiae velit sapiente doloremque voluptatibus reiciendis dolorum non. Temporibus illum veniam laudantium?
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur facere amet exercitationem, laboriosam cum ratione pariatur assumenda, in molestiae velit sapiente doloremque voluptatibus reiciendis dolorum non. Temporibus illum veniam laudantium?
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur facere amet exercitationem, laboriosam cum ratione pariatur assumenda, in molestiae velit sapiente doloremque voluptatibus reiciendis dolorum non. Temporibus illum veniam laudantium?
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur facere amet exercitationem, laboriosam cum ratione pariatur assumenda, in molestiae velit sapiente doloremque voluptatibus reiciendis dolorum non. Temporibus illum veniam laudantium?
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur facere amet exercitationem, laboriosam cum ratione pariatur assumenda, in molestiae velit sapiente doloremque voluptatibus reiciendis dolorum non. Temporibus illum veniam laudantium?
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur facere amet exercitationem, laboriosam cum ratione pariatur assumenda, in molestiae velit sapiente doloremque voluptatibus reiciendis dolorum non. Temporibus illum veniam laudantium?
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur facere amet exercitationem, laboriosam cum ratione pariatur assumenda, in molestiae velit sapiente doloremque voluptatibus reiciendis dolorum non. Temporibus illum veniam laudantium?
+
+      </div> -->
+      <header>
+        <a>About</a>
+        <a>Work</a>
+        <a>Contact</a>
+      </header>
+      <section id="intro-wrapper">
+        <section class="intro">
+          <p><span>Hi,</span></p>
+          <p><span>I'm Mike</span></p>
+          <p><span><span class='o-text'>O</span>'Brien</span></p>
+          <div id="svg-wrapper">
+            <svg id="o-svg" width="86" height="125">
+              <path id="o-path" stroke="white" stroke-width="12px" fill="#2d2d2d"
+               d="M 7, 62 a 36,36 0 1,0 72,0 a 36,36 0 1,0 -72,0"
+              />
+            </svg>
+          </div>
+        </section>
+      </section>
+      <div id="fidget-spinner"></div>
+      <div id="intro-wipe">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+      </div>
+
+
+      <script type="text/javascript">
+        // console.log('banana');
+        let oPath = document.getElementById('o-path');
+        let oSVG = document.getElementById('svg-wrapper');
+        let introWrapper = document.getElementById('intro-wrapper');
+
+
+        [
+          '#ef476fff',
+          '#ffd166ff',
+          '#06d6a0ff',
+          '#118ab2ff',
+          '#073b4cff',
+          '#ffffff'
+        ].forEach((color, index) => {
+          setTimeout(() => {
+            oPath.setAttribute('fill', color);
+          }, (index+1) * 600)
+        })
+
+        let startTime;
+        function move(time) {
+          startTime = startTime || time;
+          let elpasedTime = time - startTime;
+          let p = Math.min(elpasedTime / 1000, 1);
+
+          oSVG.style.transform = `scale(${1 + p * p * p * p * 60})`
+
+          if (p < 1) {
+            window.requestAnimationFrame(move);
+          } else {
+            introWipe.style.background = 'white';
+            introWrapper.style.display = "none";
+            window.requestAnimationFrame(barX);
+          }
+
+        }
+
+        setTimeout(() => {
+          window.requestAnimationFrame(move);
+        }, 4000)
+
+
+        //////////////////////////////////////////////////////////////////////
+        //
+        // BARS IN X
+        //
+        //////////////////////////////////////////////////////////////////////
+
+        const bars = document.getElementsByClassName('bar');
+        const introWipe = document.getElementById('intro-wipe');
+        let startTimeBarX;
+        const barAnimDuration = 1400;
+        function barX(time) {
+          startTimeBarX = startTimeBarX || time;
+          let elapsed = time - startTimeBarX;
+
+          if (elapsed <= barAnimDuration) {
+            for (let i = bars.length - 1; i >= 0; i--) {
+              let offsetTime = elapsed + (50 * (i - bars.length))
+              let progress = Math.min(1, offsetTime / 700);
+              progress = progress * progress * progress
+              bars[i].style.transform = `translate3d(${-20 + -80 * (1-progress)}%, 0, 0px)`;
+            }
+            window.requestAnimationFrame(barX);
+          } else {
+            introWipe.style.background = 'transparent';
+            window.requestAnimationFrame(barY);
+          }
+        }
+
+        //////////////////////////////////////////////////////////////////////
+        //
+        // BARS IN Y
+        //
+        //////////////////////////////////////////////////////////////////////
+
+        let startTimeY;
+        function barY(time) {
+          startTimeY = startTimeY || time;
+          let elapsed = time - startTimeY;
+
+          if (elapsed <= barAnimDuration) {
+            for (let i = 0; i < bars.length; i++) {
+              let middle = Math.floor(bars.length / 2);
+              let offsetTime = Math.max(0, elapsed - (50 * Math.abs(i - middle)));
+              let progress = Math.min(1, offsetTime / 700);
+              progress = progress * progress * progress;
+
+              let y = i < middle ? -1000 * progress : 1000 * progress;
+
+              bars[i].style.transform = `translate3d(-20%, ${y}px, ${5 - Math.abs(i - middle)}px)`;
+            }
+            window.requestAnimationFrame(barY);
+          }
+        }
+
+
+
+        let fidgetEl = document.getElementById('fidget-spinner');
+        let fidgetStart;
+
+        function fidget(time) {
+          fidgetStart = fidgetStart || time;
+
+          if (time - fidgetStart < 4000) {
+            fidgetEl.style.transform = `rotateZ(${time / 800}rad)`;
+            window.requestAnimationFrame(fidget);
+          }
+        }
+
+        window.requestAnimationFrame(fidget);
+      </script>
+    </body>
 </html>

@@ -1,0 +1,9 @@
+{
+  "name": "michaelobriena.github.com",
+  "version": "1.0.0",
+  "description": "Personal Site",
+  "main": "index.js",
+  "repository": "git@github.com:michaelobriena/michaelobriena.github.com.git",
+  "author": "Michael O'Brien <michaelobriena@gmail.com>",
+  "license": "MIT"
+}

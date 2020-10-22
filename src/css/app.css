@@ -1,0 +1,147 @@
+html {
+  height: 100%;
+  width: 100%;
+  overscroll-behavior: contain;
+  font-smoothing: antialiased;
+	text-rendering: optimizeLegibility;
+}
+
+body {
+  height: 100%;
+  width: 100%;
+  background-color: #2d2d2d;
+  cursor: pointer;
+  font-family: Futura;
+  margin: 0;
+}
+
+header {
+  position: fixed;
+  top: 50px;
+  right: 50px;
+  color: white;
+  font-size: 24px;
+}
+
+header a {
+  margin-left: 40px;
+}
+
+#intro-wrapper {
+  position: fixed;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  display: grid;
+}
+
+.intro {
+  position: relative;
+  font-family: Futura;
+  color: white;
+  font-size: 96px;
+  height: 384px;
+  width: 372px;
+  margin: auto;
+}
+
+.intro p {
+  margin: 0;
+}
+
+#fidget-spinner {
+  width: 200px;
+  height: 200px;
+  position: absolute;
+  left: -600px;
+  background-color: #ef476fff;
+  z-index: 100;
+}
+
+#o-svg {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  stroke: "red";
+}
+
+#svg-wrapper {
+  transform-origin: 50% 50%;
+  width: 86px;
+  height: 125px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.o-text {
+  opacity: 0;
+}
+
+.mainWrapper {
+  font-size: 100px;
+}
+
+#intro-wipe {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  overflow: hidden;
+  perspective: 2000px;
+}
+
+#intro-wipe .bar {
+  height: 150px;
+  border-radius: 75px;
+  box-sizing: border-box;
+  border: 5px solid #2d2d2d;
+  width: 180%;
+  transform: translate3d(-100%, 0, 0);
+  transform-style: preserve-3d;
+}
+#intro-wipe .bar:nth-child(1) {
+  background: #ef476fff;
+  z-index: 7;
+}
+
+#intro-wipe .bar:nth-child(2) {
+  background: #ffd166ff;
+  z-index: 8;
+}
+
+#intro-wipe .bar:nth-child(3) {
+  background: #06d6a0ff;
+  z-index: 9;
+}
+
+#intro-wipe .bar:nth-child(4) {
+  background: #118ab2ff;
+  z-index: 10;
+}
+
+#intro-wipe .bar:nth-child(5) {
+  background: #ef476fff;
+  z-index: 9;
+}
+
+#intro-wipe .bar:nth-child(6) {
+  background: #ffd166ff;
+  z-index: 8;
+}
+
+#intro-wipe .bar:nth-child(7) {
+  background: #06d6a0ff;
+  z-index: 7;
+}
+
+#intro-wipe .bar:nth-child(8) {
+  background: #118ab2ff;
+  z-index: 6;
+}
+
+/*
+--paradise-pink: #ef476fff;
+--orange-yellow-crayola: #ffd166ff;
+--caribbean-green: #06d6a0ff;
+--blue-ncs: #118ab2ff;
+--midnight-green-eagle-green: #073b4cff; */
